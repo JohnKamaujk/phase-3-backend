@@ -1,4 +1,4 @@
-puts "🌱 Seeding spices..."
+puts "🌱 Seeding data..."
 
 # Seed your database here
 # Regimes
@@ -95,4 +95,4 @@ Recipe.create(
   dessert_id: 4,
   ingredient_id: 3
 )
-puts "✅ Done seeding!"
+puts "✅ Done seeding!!"

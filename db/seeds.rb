@@ -43,5 +43,56 @@ Dessert.create(
   "proteins": 21,
   "fat": 20,
 )
-
+Dessert_Regime.create(
+  dessert_id: 1,
+  regime_id: 1
+)
+Dessert_Regime.create(
+  dessert_id: 1,
+  regime_id: 2
+)
+Dessert_Regime.create(
+  dessert_id: 1,
+  regime_id: 3
+)
+Dessert_Regime.create(
+  dessert_id: 2,
+  regime_id: 1
+)
+Dessert_Regime.create(
+  dessert_id: 2,
+  regime_id: 4
+)
+Dessert_Regime.create(
+  dessert_id: 3,
+  regime_id: 2
+)
+Dessert_Regime.create(
+  dessert_id: 4,
+  regime_id: 2
+)
+Recipe.create(
+  dessert_id: 1,
+  ingredient_id: 1
+)
+Recipe.create(
+  dessert_id: 1,
+  ingredient_id: 2
+)
+Recipe.create(
+  dessert_id: 2,
+  ingredient_id: 3
+)
+Recipe.create(
+  dessert_id: 4,
+  ingredient_id: 1
+)
+Recipe.create(
+  dessert_id: 2,
+  ingredient_id: 4
+)
+Recipe.create(
+  dessert_id: 4,
+  ingredient_id: 3
+)
 puts "✅ Done seeding!"

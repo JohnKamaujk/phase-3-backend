@@ -1,10 +1,11 @@
 class ApplicationController < Sinatra::Base
-  set :default_content_type, 'application/json'
-  
+  set :default_content_type, "application/json"
+
   # Add your routes here
   get "/" do
     { message: "Good luck with your project!" }.to_json
   end
+  # getting all the Dessert instances
   get "/desserts" do
     Dessert.desserts.to_json
   end
@@ -12,6 +13,7 @@ class ApplicationController < Sinatra::Base
     dessert = Dessert.find(params[:id])
     dessert.dessert_obj.to_json
   end
+  # Creating a dessert instance
   post "/desserts" do
     Dessert.create(
       name: params[:name],
@@ -37,6 +39,7 @@ class ApplicationController < Sinatra::Base
     end
     Dessert.last.dessert_obj.to_json
   end
+  # deleting a specified Dessert instance
   delete "/desserts/:id" do
     recipe = Recipe.where("dessert_id = ?", params[:id])
     dessert_regime = Dessert_Regime.where("dessert_id = ?", params[:id])
@@ -46,6 +49,7 @@ class ApplicationController < Sinatra::Base
     recipe.destroy_all
     dessert.to_json
   end
+  # updating a specified Dessert instance
   patch "/desserts/:id" do
     dessert = Dessert.find(params[:id])
     dessert.update(

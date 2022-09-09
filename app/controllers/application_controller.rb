@@ -37,5 +37,15 @@ class ApplicationController < Sinatra::Base
     end
     Dessert.last.dessert_obj.to_json
   end
+  delete "/desserts/:id" do
+    recipe = Recipe.where("dessert_id = ?", params[:id])
+    dessert_regime = Dessert_Regime.where("dessert_id = ?", params[:id])
+    dessert = Dessert.find(params[:id])
+    dessert.destroy
+    dessert_regime.destroy_all
+    recipe.destroy_all
+    dessert.to_json
+  end
+
 
 end
